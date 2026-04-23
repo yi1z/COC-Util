@@ -1,0 +1,62 @@
+:root {
+  color-scheme: dark;
+  font-family: 'IBM Plex Sans', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg-ink: #12110f;
+  --bg-panel: rgba(22, 19, 15, 0.74);
+  --bg-paper: rgba(229, 214, 182, 0.94);
+  --bg-paper-soft: rgba(239, 230, 207, 0.92);
+  --line-soft: rgba(228, 204, 160, 0.2);
+  --line-strong: rgba(244, 223, 181, 0.4);
+  --text-primary: #f5ead0;
+  --text-muted: rgba(245, 234, 208, 0.68);
+  --accent: #d09a46;
+  --accent-soft: rgba(208, 154, 70, 0.16);
+  --danger: #d66a5c;
+  --success: #8ab67c;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(172, 128, 48, 0.22), transparent 34%),
+    radial-gradient(circle at right 12%, rgba(111, 77, 33, 0.26), transparent 24%),
+    linear-gradient(180deg, #181511 0%, #0e0d0b 100%);
+  color: var(--text-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}

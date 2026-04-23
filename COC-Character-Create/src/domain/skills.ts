@@ -1,0 +1,63 @@
+import type { OccupationSetup, SkillDefinition } from './types';
+
+export const STANDARD_SKILLS: SkillDefinition[] = [
+  { id: 'accounting', name: '会计', category: '知识', base: { kind: 'fixed', value: 5 } },
+  { id: 'anthropology', name: '人类学', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'appraise', name: '估价', category: '知识', base: { kind: 'fixed', value: 5 } },
+  { id: 'archaeology', name: '考古学', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'art-craft', name: '艺术/手艺', category: '专业', base: { kind: 'fixed', value: 5 } },
+  { id: 'charm', name: '魅惑', category: '交涉', base: { kind: 'fixed', value: 15 } },
+  { id: 'climb', name: '攀爬', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'credit-rating', name: '信用评级', category: '专业', base: { kind: 'fixed', value: 0 } },
+  { id: 'cthulhu-mythos', name: '克苏鲁神话', category: '知识', base: { kind: 'fixed', value: 0 } },
+  { id: 'disguise', name: '乔装', category: '行动', base: { kind: 'fixed', value: 5 } },
+  { id: 'dodge', name: '闪避', category: '行动', base: { kind: 'derived', source: 'DEX_HALF' } },
+  { id: 'drive-auto', name: '汽车驾驶', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'electrical-repair', name: '电气维修', category: '专业', base: { kind: 'fixed', value: 10 } },
+  { id: 'fast-talk', name: '话术', category: '交涉', base: { kind: 'fixed', value: 5 } },
+  { id: 'fighting-brawl', name: '格斗(斗殴)', category: '战斗', base: { kind: 'fixed', value: 25 } },
+  { id: 'firearms-handgun', name: '射击(手枪)', category: '战斗', base: { kind: 'fixed', value: 20 } },
+  { id: 'firearms-rifle', name: '射击(步枪/霰弹枪)', category: '战斗', base: { kind: 'fixed', value: 25 } },
+  { id: 'first-aid', name: '急救', category: '专业', base: { kind: 'fixed', value: 30 } },
+  { id: 'history', name: '历史', category: '知识', base: { kind: 'fixed', value: 5 } },
+  { id: 'intimidate', name: '恐吓', category: '交涉', base: { kind: 'fixed', value: 15 } },
+  { id: 'jump', name: '跳跃', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'language-own', name: '母语', category: '知识', base: { kind: 'derived', source: 'EDU' } },
+  { id: 'language-other', name: '外语', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'law', name: '法律', category: '知识', base: { kind: 'fixed', value: 5 } },
+  { id: 'library-use', name: '图书馆使用', category: '知识', base: { kind: 'fixed', value: 20 } },
+  { id: 'listen', name: '聆听', category: '探索', base: { kind: 'fixed', value: 20 } },
+  { id: 'locksmith', name: '锁匠', category: '专业', base: { kind: 'fixed', value: 1 } },
+  { id: 'mechanical-repair', name: '机械维修', category: '专业', base: { kind: 'fixed', value: 10 } },
+  { id: 'medicine', name: '医学', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'natural-world', name: '博物学', category: '知识', base: { kind: 'fixed', value: 10 } },
+  { id: 'navigate', name: '导航', category: '探索', base: { kind: 'fixed', value: 10 } },
+  { id: 'occult', name: '神秘学', category: '知识', base: { kind: 'fixed', value: 5 } },
+  { id: 'operate-heavy-machinery', name: '重型机械操作', category: '专业', base: { kind: 'fixed', value: 1 } },
+  { id: 'persuade', name: '说服', category: '交涉', base: { kind: 'fixed', value: 10 } },
+  { id: 'pilot', name: '驾驶(飞行器)', category: '行动', base: { kind: 'fixed', value: 1 } },
+  { id: 'psychoanalysis', name: '精神分析', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'psychology', name: '心理学', category: '知识', base: { kind: 'fixed', value: 10 } },
+  { id: 'ride', name: '骑术', category: '行动', base: { kind: 'fixed', value: 5 } },
+  { id: 'science', name: '科学', category: '知识', base: { kind: 'fixed', value: 1 } },
+  { id: 'sleight-of-hand', name: '妙手', category: '行动', base: { kind: 'fixed', value: 10 } },
+  { id: 'spot-hidden', name: '侦查', category: '探索', base: { kind: 'fixed', value: 25 } },
+  { id: 'stealth', name: '潜行', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'survival', name: '生存', category: '探索', base: { kind: 'fixed', value: 10 } },
+  { id: 'swim', name: '游泳', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'throw', name: '投掷', category: '行动', base: { kind: 'fixed', value: 20 } },
+  { id: 'track', name: '追踪', category: '探索', base: { kind: 'fixed', value: 10 } },
+];
+
+export const OCCUPATION_FORMULA_PRESETS: Array<{
+  id: string;
+  label: string;
+  formula: OccupationSetup['formula'];
+}> = [
+  { id: 'edu4', label: 'EDU x 4', formula: [{ attribute: 'EDU', multiplier: 4 }] },
+  { id: 'edu2-str2', label: 'EDU x 2 + STR x 2', formula: [{ attribute: 'EDU', multiplier: 2 }, { attribute: 'STR', multiplier: 2 }] },
+  { id: 'edu2-dex2', label: 'EDU x 2 + DEX x 2', formula: [{ attribute: 'EDU', multiplier: 2 }, { attribute: 'DEX', multiplier: 2 }] },
+  { id: 'edu2-app2', label: 'EDU x 2 + APP x 2', formula: [{ attribute: 'EDU', multiplier: 2 }, { attribute: 'APP', multiplier: 2 }] },
+  { id: 'edu2-int2', label: 'EDU x 2 + INT x 2', formula: [{ attribute: 'EDU', multiplier: 2 }, { attribute: 'INT', multiplier: 2 }] },
+  { id: 'edu2-pow2', label: 'EDU x 2 + POW x 2', formula: [{ attribute: 'EDU', multiplier: 2 }, { attribute: 'POW', multiplier: 2 }] },
+];
